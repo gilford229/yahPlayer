@@ -1,0 +1,1 @@
+YAH PLAYER est une application desktop de lecture de contenus protégés.

@@ -1,0 +1,343 @@
+@font-face { 
+  font-family: 'Roboto'; 
+  src: url('../fonts/Roboto-Regular-webfont.eot'); 
+  src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), 
+      url('../fonts/Roboto-Regular-webfont.woff') format('woff'), 
+      url('../fonts/Roboto-Regular-webfont.ttf') format('truetype'), 
+      url('../fonts/Roboto-Regular-webfont.svg#RobotoRegular') format('svg');
+}  
+
+/*Générale*/
+body{
+	margin:0;
+	padding:0;
+}
+header{
+	position: fixed;
+	top:0%;
+	left:0%;
+	width:100%;
+	height: 5%;
+	-webkit-app-region: drag;
+	cursor: unset;
+	background: #2b2e3b;
+	z-index:101;
+	margin:0;
+	padding:0;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-items: center;
+}
+#menu-button-container{
+	height: 100%;
+	width: auto;
+	position:absolute;
+	left: 1%;
+  -webkit-app-region: no-drag;
+}
+.socialNetwork{
+	height: 100%;
+	width: 10%;
+	right: 16%;
+	position: absolute;
+	-webkit-app-region: no-drag;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.socialNetwork svg{
+	width: 15px;
+  height: 15px;
+  fill: white;
+	cursor: pointer;
+}
+.socialNetwork svg:hover{
+  fill: #e43a15;
+}
+#window-controls-container{
+	height: 100%;
+	width: 9%;
+	right: 0%;
+	position: absolute;
+  -webkit-app-region: no-drag;
+  user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+#minimize-button, #min-max-button, #close-button{
+	height: 100%;
+	width: 33.33%;
+	position: relative;
+}
+#minimize-button img, #min-max-button img, #close-button img{
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+#minimize-button:hover, #min-max-button:hover{
+	background: #4f5b5f;
+}
+#close-button:hover{
+	background: #e43a15;
+}
+
+/*Styles de l'animation de chargement (1ère page)*/
+.msg{ 
+  color: #2B2E3B; 
+} 
+#nlpt{ 
+  animation: a-s .5s 1.0s 1 forwards; 
+  background-color: #2B2E3B; 
+  height: 4px; 
+  margin: 56px auto 20px; 
+  opacity: 0; 
+  overflow: hidden; 
+  position: relative; 
+  width: 300px;
+} 
+#lol{ 
+  animation: a-lb 5s 2s linear forwards; 
+  background-color: #E43A15; 
+  content: ''; 
+  display: block; 
+  height: 100%; 
+  position: absolute; 
+  transform: translateX(-300px); 
+  width: 100% 
+}       
+@keyframes a-lb{ 
+  0%{transform:translateX(-300px)}
+  5%{transform:translateX(-280px)}
+  15%{transform:translateX(-250px)}
+  25%{transform:translateX(-200px)}
+  30%{transform:translateX(-150px)}
+  45%{transform:translateX(-50px)}
+  50%{transform:translateX(-25px)}
+  65%{transform:translateX(-25px)}
+  70%{transform:translateX(-10px)}
+  95%{transform:translateX(-10px)}
+  100%{transform:translateX(0px)} 
+}
+@keyframes a-s{ 
+  100%{opacity:1}
+}
+/*style des éléments de la page d'accueil (sauf celui du chargement)*/
+#label{
+	display: flex;
+	height: 100%;
+	width: 100%;
+	margin:0;
+	padding:0;
+	text-align: center;
+}
+#label img{
+	display:block;margin:auto;
+}
+
+/*les styles des page 1 à 2*/
+#page-1 {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right:0;
+  top:0;
+  bottom:0;
+  left:0;
+  z-index: 100;
+}
+.page-2 {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  overflow: hidden;
+  bottom:0;
+  right:0;
+  margin: 0 0 0 0;
+  z-index: 90;
+}
+
+/*Styles de Music*/
+ul li a{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.ml{
+  width:38%;
+	font-size: 80%;
+}
+.fn{
+  width: 10%;
+  text-align: center;
+  font-size: 80%;
+	text-align: right;
+}
+.db{
+  width: 50%;
+  font-size: 100%;
+}
+.db, .fn, .ml{
+  display: inline-block;
+  font-weight: normal;
+  margin:0;
+	padding:0;
+}
+.plyr-playlist-wrapper {
+  background:none;
+  padding: 0.5em 0.5em 0.5em 0.25em;
+}
+.plyr-playlist-wrapper .plyr-playlist {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  width: 60%;
+  margin:5px 0 0 0;
+  height: auto;
+  overflow:auto;
+  top:10%;
+  left:0%;
+  padding: 6px 4px;
+  box-sizing: border-box;
+}
+.plyr-playlist-wrapper .plyr-playlist li {
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 0px;
+  margin-bottom: 3px;
+	width:100%;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.plyr-playlist-wrapper .plyr-playlist li.pls-playing,
+.plyr-playlist-wrapper .plyr-playlist li:hover {
+	background-color: #e43a15;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease 0s;
+}
+.plyr-playlist-wrapper .plyr-playlist li.pls-playing a {
+  color: white;
+}
+.plyr-playlist-wrapper .plyr-playlist li a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  text-align: justify;
+  color: #2b2e3b;;
+  display: block;
+  padding: 10px 0;
+  outline: none;
+  padding: 0.5em 0.25em 0.5em 0.75em;
+  padding-bottom: 10px;
+}
+.plyr-playlist-wrapper .plyr-playlist li a:hover{
+	color: white;
+}
+.plyr-playlist-wrapper .plyr-playlist li:last-child a {
+  border-bottom: 0;
+}
+
+/*Styles de Player (standard)*/
+#footer{
+	height: 15%;
+	width: 20%;
+	left: 0%;
+	bottom: 0%;
+	background: rgb(21, 22, 29);
+	position: absolute;
+	z-index: 1999;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+#footer2{
+	position: absolute;
+	height: 15%;
+	width: 80%;
+	right: 0%;
+	bottom: 0%;
+	background: rgb(43, 46, 59);
+	z-index: 1999;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+#monLecteurAudio{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: auto;
+}
+#cover{
+	position: relative;
+	width: 100px;
+	height: 100px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+#cover img{
+	position: absolute;
+	display: inline-block;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+#cover #cvr{
+	height: 80%;
+	width: 80%;
+}
+#cover #plyr{
+	height: 70%;
+	width: 70%;
+}
+#mediaInfo{
+	font-family:'Roboto',sans-serif; 
+	height: 100px;
+	width: auto;
+	color:whitesmoke;
+	text-align: left;
+}
+#mediaInfo #artist{
+	font-weight: normal; 
+	font-size: medium;
+	font-style:normal;
+}
+#mediaInfo #album{
+	font-weight:normal;
+	font-style:normal; 
+	font-size: medium;
+}
+#mediaInfo #titre{
+	font-weight:normal; 
+	font-style:italic; 
+	font-size:medium;
+	color: #e43a15;
+}
+#artist, #album, #titre{
+	margin: 10px 0;
+}
+#ouf{
+  	display:none;
+}
+
+/*Affichage de galerie*/

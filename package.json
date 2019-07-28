@@ -7,25 +7,15 @@
 	"main": "main.js",
 	"scripts": {
 		"start": "electron .",
-		"dev": "webpack --mode development",
-		"buildwebpack": "webpack --mode production",
-
 		"pack": "npx electron-builder --dir",
-		"pack:64": "npm run pack -- --arch x64",
+		"pack:x64": "npm run pack -- --arch x64",
 		"dist": "npx electron-builder",
 		"dist:x64": "npm run dist -- --arch x64",
 		"publish:win64": "build --win -p always --config electron-builder64.yml",
 		"publish:win32": "build --win -p always --config electron-builder.yml",
 		"publish:win": "npm run publish:win32 && npm run publish:win64",
-		"publish:mac": "build --mac  -p always --config electron-builder.yml",
-		"publish:lin": "build --linux  -p always --config electron-builder.yml",
-		
-		"package-mac": "electron-packager . Album --overwrite --platform=darwin --arch=x64 --icon=assets/picto/icon.icns --prune=true --out=release-builds",
-		"package-win": "electron-packager . Album --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/picto/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE",
-		"package-linux": "electron-packager . Album --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/picto/icon.png --prune=true --out=release-builds",
-		"create-installer-win": "node installers/windows/createinstaller.js",
-		"create-installer-mac": "electron-installer-dmg ./release-builds/Album-darwin-x64/Album.app Album --out=release-builds --overwrite --icon=assets/picto/icon.icns",
-		"create-debian-installer": "electron-installer-debian --src release-builds/YAH-linux-x64/ --arch amd64 --config debian.json"
+		"publish:mac": "build --mac -p always --config electron-builder.yml",
+		"publish:lin": "build --linux -p always --config electron-builder.yml"
 	},
 	"keywords": [
 		"YAH",
@@ -37,7 +27,7 @@
 	"license": "ISC",
 	"devDependencies": {
 		"electron": "^5.0.4",
-		"electron-builder": "^21.1.1",
+		"electron-builder": "^21.1.5",
 		"electron-installer-dmg": "^3.0.0",
 		"electron-packager": "^13.1.1",
 		"electron-squirrel-startup": "^1.0.0",

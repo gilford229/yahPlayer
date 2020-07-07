@@ -26,7 +26,7 @@
 	"author": "YAH MEDIA & Partners",
 	"license": "ISC",
 	"devDependencies": {
-		"electron": "^5.0.4",
+		"electron": "^7.2.4",
 		"electron-builder": "^21.1.5",
 		"electron-installer-dmg": "^3.0.0",
 		"electron-packager": "^13.1.1",
